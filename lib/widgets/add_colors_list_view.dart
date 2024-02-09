@@ -12,7 +12,7 @@ class AddColorsListView extends StatefulWidget {
 }
 
 class _AddColorsListViewState extends State<AddColorsListView> {
-  int? currentIndex = 0;
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {

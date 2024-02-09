@@ -21,7 +21,7 @@ class AddNoteBottomSheet extends StatelessWidget {
             Navigator.pop(context);
           } else if (state is AddNoteFailure) {
             showSnackBar(context,
-                message: 'Failed: ${state.errMessage.toString()}');
+                message: 'Failed: ${state.errMessage}');
           }
         },
         builder: (context, state) {
