@@ -1,3 +1,4 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -30,9 +31,19 @@ class CustomListTile extends StatelessWidget {
       ),
       trailing: IconButton(
         onPressed: () {
-          note.delete();
-          BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-          showSnackBar(context, message: 'Note Deleted Successfully');
+          AwesomeDialog(
+            context: context,
+            dialogType: DialogType.warning,
+            animType: AnimType.scale,
+            title: 'Deleting...',
+            desc: 'Are you sure for delete this note ?',
+            btnCancelOnPress: () {},
+            btnOkOnPress: () {
+              note.delete();
+              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+              showSnackBar(context, message: 'Note Deleted Successfully');
+            },
+          ).show();
         },
         icon: const Icon(
           FontAwesomeIcons.trash,
