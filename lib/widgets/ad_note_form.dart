@@ -44,7 +44,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
               height: 16,
             ),
             CustomTextFormField(
-              hintText: 'Content',
+              hintText: 'Description',
               maxLines: 5,
               onSaved: (data) {
                 content = data;
@@ -66,7 +66,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       formKey.currentState!.save();
                       NoteModel note = NoteModel(
                         title: title!,
-                        subTitle: content!,
+                        description: content!,
                         date: DateFormat.yMd().add_jm().format(DateTime.now()),
                         color:
                             BlocProvider.of<AddNoteCubit>(context).color.value,

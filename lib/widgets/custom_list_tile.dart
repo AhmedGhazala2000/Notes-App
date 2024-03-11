@@ -25,7 +25,7 @@ class CustomListTile extends StatelessWidget {
       subtitle: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Text(
-          note.subTitle,
+          note.description,
           style: TextStyle(color: Colors.black.withOpacity(.5), fontSize: 16),
         ),
       ),

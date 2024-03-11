@@ -32,7 +32,7 @@ class _EditViewState extends State<EditView> {
             icon: Icons.check,
             onPressed: () {
               widget.note.title = title ?? widget.note.title;
-              widget.note.subTitle = content ?? widget.note.subTitle;
+              widget.note.description = content ?? widget.note.description;
               widget.note.save;
               showSnackBar(context, message: 'Note Edited Successfully');
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
@@ -55,7 +55,7 @@ class _EditViewState extends State<EditView> {
             onChange: (data) {
               content = data;
             },
-            hintText: widget.note.subTitle,
+            hintText: widget.note.description,
             maxLines: 5,
           ),
           const SizedBox(
