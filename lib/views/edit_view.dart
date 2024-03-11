@@ -40,7 +40,7 @@ class _EditViewState extends State<EditView> {
             },
           ),
           const SizedBox(
-            height: 30,
+            height: 16,
           ),
           CustomTextFormField(
             onChange: (data) {
