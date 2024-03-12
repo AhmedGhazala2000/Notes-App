@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/constant.dart';
+import 'package:note_app/utils/responsive_font_size.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
-      {Key? key, required this.hintText, this.maxLines = 1, this.onSaved, this.onChange})
+      {Key? key,
+      required this.hintText,
+      this.maxLines = 1,
+      this.onSaved,
+      this.onChange})
       : super(key: key);
   final String hintText;
   final int maxLines;
@@ -25,6 +30,9 @@ class CustomTextFormField extends StatelessWidget {
       cursorColor: kPrimaryColor,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(
+          fontSize: getResponsiveFontSize(context, fontSize: 16),
+        ),
         border: customBorder(),
         enabledBorder: customBorder(),
         focusedBorder: customBorder(color: kPrimaryColor),

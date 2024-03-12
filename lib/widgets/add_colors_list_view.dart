@@ -19,21 +19,22 @@ class _AddColorsListViewState extends State<AddColorsListView> {
     return SizedBox(
       height: 37 * 2,
       child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: kColors.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                currentIndex = index;
-                setState(() {});
-                BlocProvider.of<AddNoteCubit>(context).color = kColors[index];
-              },
-              child: ColorItem(
-                isActive: currentIndex == index,
-                color: kColors[index],
-              ),
-            );
-          }),
+        scrollDirection: Axis.horizontal,
+        itemCount: kColors.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              currentIndex = index;
+              setState(() {});
+              BlocProvider.of<AddNoteCubit>(context).color = kColors[index];
+            },
+            child: ColorItem(
+              isActive: currentIndex == index,
+              color: kColors[index],
+            ),
+          );
+        },
+      ),
     );
   }
 }

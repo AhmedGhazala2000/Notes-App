@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/constant.dart';
+import 'package:note_app/utils/responsive_font_size.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -26,11 +27,11 @@ class CustomButton extends StatelessWidget {
                 color: Colors.black87,
               ),
             )
-          : const Text(
+          : Text(
               'Add',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18,
+                fontSize: getResponsiveFontSize(context, fontSize: 18),
                 fontWeight: FontWeight.bold,
               ),
             ),

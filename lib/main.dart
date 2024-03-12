@@ -14,10 +14,12 @@ void main() async {
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(kNotesBox);
 
-  runApp(DevicePreview(
-    enabled: false,
-    builder: (context) => const NotesApp(),
-  ),);
+  runApp(
+    DevicePreview(
+      enabled: false,
+      builder: (context) => const NotesApp(),
+    ),
+  );
 }
 
 class NotesApp extends StatelessWidget {

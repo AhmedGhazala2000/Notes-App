@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/utils/responsive_font_size.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar(
@@ -12,13 +13,15 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       bottom: false,
-      minimum: const EdgeInsets.only(top: 30),
+      minimum: const EdgeInsets.only(top: 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             text,
-            style: const TextStyle(fontSize: 28),
+            style: TextStyle(
+              fontSize: getResponsiveFontSize(context, fontSize: 28),
+            ),
           ),
           Container(
             decoration: BoxDecoration(
@@ -26,7 +29,10 @@ class CustomAppBar extends StatelessWidget {
               color: Colors.white.withOpacity(.05),
             ),
             child: IconButton(
-              icon: Icon(icon),
+              icon: Icon(
+                icon,
+                size: getResponsiveFontSize(context, fontSize: 24),
+              ),
               onPressed: onPressed ?? () {},
             ),
           )

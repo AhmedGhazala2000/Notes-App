@@ -25,10 +25,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: EdgeInsets.only(
-          left: 16,
-          right: 16,
-          top: 32,
-          bottom: 32 + MediaQuery.of(context).viewInsets.bottom),
+        left: 16,
+        right: 16,
+        top: 32,
+        bottom: 32 + MediaQuery.of(context).viewInsets.bottom,
+      ),
       child: Form(
         key: formKey,
         autovalidateMode: autoValidateMode,

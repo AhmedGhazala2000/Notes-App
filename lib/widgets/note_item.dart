@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/models/note_model.dart';
+import 'package:note_app/utils/responsive_font_size.dart';
 import 'package:note_app/views/edit_view.dart';
 import 'package:note_app/widgets/custom_list_tile.dart';
 
@@ -14,9 +15,10 @@ class NoteItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => EditView(
-                    note: note,
-                  )),
+            builder: (context) => EditView(
+              note: note,
+            ),
+          ),
         );
       },
       child: Container(
@@ -36,6 +38,7 @@ class NoteItem extends StatelessWidget {
               note.date,
               style: TextStyle(
                 color: Colors.black.withOpacity(.4),
+                fontSize: getResponsiveFontSize(context, fontSize: 14),
               ),
             ),
           ],

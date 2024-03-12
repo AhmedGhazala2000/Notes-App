@@ -25,21 +25,22 @@ class _EditColorsListViewState extends State<EditColorsListView> {
     return SizedBox(
       height: 37 * 2,
       child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: kColors.length,
-          itemBuilder: (context, index) {
-            return GestureDetector(
-              onTap: () {
-                currentIndex = index;
-                widget.note.color = kColors[index].value;
-                setState(() {});
-              },
-              child: ColorItem(
-                isActive: currentIndex == index,
-                color: kColors[index],
-              ),
-            );
-          }),
+        scrollDirection: Axis.horizontal,
+        itemCount: kColors.length,
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {
+              currentIndex = index;
+              widget.note.color = kColors[index].value;
+              setState(() {});
+            },
+            child: ColorItem(
+              isActive: currentIndex == index,
+              color: kColors[index],
+            ),
+          );
+        },
+      ),
     );
   }
 }

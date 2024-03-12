@@ -9,17 +9,20 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset:
+          MediaQuery.sizeOf(context).height < 500 ? false : true,
       body: const NotesViewBody(),
       floatingActionButton: FloatingActionButton(
         backgroundColor: kPrimaryColor,
         shape: const CircleBorder(),
         onPressed: () {
           showModalBottomSheet(
-              isScrollControlled: true,
-              context: context,
-              builder: (context) {
-                return const AddNoteBottomSheet();
-              });
+            isScrollControlled: true,
+            context: context,
+            builder: (context) {
+              return const AddNoteBottomSheet();
+            },
+          );
         },
         child: const Icon(
           Icons.add,

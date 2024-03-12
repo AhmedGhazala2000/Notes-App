@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note_app/helper/show_snack_bar.dart';
 import 'package:note_app/models/note_model.dart';
+import 'package:note_app/utils/responsive_font_size.dart';
 
 class CustomListTile extends StatelessWidget {
   const CustomListTile({
@@ -20,13 +21,19 @@ class CustomListTile extends StatelessWidget {
       contentPadding: const EdgeInsets.all(0),
       title: Text(
         note.title,
-        style: const TextStyle(color: Colors.black, fontSize: 28),
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: getResponsiveFontSize(context, fontSize: 28),
+        ),
       ),
       subtitle: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Text(
           note.description,
-          style: TextStyle(color: Colors.black.withOpacity(.5), fontSize: 16),
+          style: TextStyle(
+            color: Colors.black.withOpacity(.5),
+            fontSize: getResponsiveFontSize(context, fontSize: 16),
+          ),
         ),
       ),
       trailing: IconButton(
