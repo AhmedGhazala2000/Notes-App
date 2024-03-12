@@ -15,7 +15,7 @@ void main() async {
   await Hive.openBox<NoteModel>(kNotesBox);
 
   runApp(DevicePreview(
-    enabled: true,
+    enabled: false,
     builder: (context) => const NotesApp(),
   ),);
 }
